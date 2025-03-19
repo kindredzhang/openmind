@@ -1,0 +1,7 @@
+import os
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_BASE = os.getenv("OPENAI_API_BASE")
+
+OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY")
+OLLAMA_API_BASE = os.getenv("OLLAMA_API_BASE")
