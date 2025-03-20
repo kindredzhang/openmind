@@ -1,7 +1,5 @@
 import os
+from env import DATA_DIR
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPENAI_API_BASE = os.getenv("OPENAI_API_BASE")
+CHROMA_DATA_PATH = f"{DATA_DIR}/vector_db"
 
-OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY")
-OLLAMA_API_BASE = os.getenv("OLLAMA_API_BASE")

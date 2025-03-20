@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from openmind.internal.db import Session
 
 app = FastAPI(
     title="OpenMind API",
@@ -21,6 +22,10 @@ app.add_middleware(
 async def root():
     return {"message": "Welcome to OpenMind API"}
 
+@app.get("/health/db")
+async def healthcheck_with_db():
+    Session.execute(text("SELECT 1;")).all()
+    return {"status": True}
 
 if __name__ == "__main__":
     import uvicorn
